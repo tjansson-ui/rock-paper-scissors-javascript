@@ -10,10 +10,26 @@ var choices = ["R","P","S"]
 //computer player
 var choice = {
     human: prompt("Type R, P, or S"),
-    computer: function randomNum() {
-        n = Math.floor(Math.random() * 3);
-        choices[n];
+    computer: choices[ Math.floor(Math.random() * 3)],
     }
+
+console.log("Human: " + choice.human)
+console.log("Computer: " + choice.computer)
+
+if (choice.human === "S" && choice.computer === "P" ||
+    choice.human === "R" && choice.computer === "S" ||
+    choice.human === "P" && choice.computer === "R" )
+    {
+        alert("You Won!")
+        wins++
+}
+
+else if (choice.human === choice.computer) {
+    alert("Round Tied!")
+    ties++
+} else {
+    alert("You lost!")
+    losses++
 }
 // var result = [win]
 
@@ -25,11 +41,14 @@ var choice = {
 
 //compare choices
     //if humanChoice is S and computerChoice is P OR
-// var result = []
+// var result = 
+//     choice.human === "S" && choice.computer === "P" ||
+//     choice.human === "R" && choice.computer === "S" ||
+//     choice.human === "P" && choice.computer === "R"  ? "Congrats, you win! Play Again?" wins++
+//     :choice.human === choice.computer ? "It's a tie. Let's play again" ties++
+//     : "You Lost..." losses++;
 
-// function() 
-//     human.result[0] ? "Congrats, you win! Play Again?"
-//     :human.result[1] ? "Oh... Looks like you lost"
-//     :human.result[2] ? "It's a tie. Let's play again"
+// alert(result)
+alert("Wins: " + wins + "\nTies: " + ties + "\nLosses: " + losses)
+//score
 
-//var hunger = hungerlevel >= 50 ? 'I am really hungry' : "I'm full for now..."
